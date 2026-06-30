@@ -21,6 +21,9 @@ export const scrapedData = {
   goldStandard: { projects: [], lastScraped: null, status: "pending" },
   verra: { projects: [], lastScraped: null, status: "pending" },
   worldBank: { carbonPricing: [], lastScraped: null, status: "pending" },
+  ceew: { research: [], lastScraped: null, status: "pending" },
+  ieta: { news: [], lastScraped: null, status: "pending" },
+  eex: { prices: [], lastScraped: null, status: "pending" },
 };
 
 async function safeFetch(url, opts = {}) {
@@ -339,6 +342,104 @@ export async function scrapeICAP() {
   }
 }
 
+// ── 10. CEEW (Council on Energy, Environment and Water) ─────────────────────
+export async function scrapeCEEW() {
+  console.log("🔍 Scraping CEEW Research...");
+  try {
+    const html = await safeFetch("https://www.ceew.in/publications");
+    if (!html) throw new Error("No response");
+    const $ = cheerio.load(html);
+    const items = [];
+    $(".publication-card, .views-row, article, .card").each((i, el) => {
+      const title = $(el).find("h3, h4, .title, a").first().text().trim();
+      const link = $(el).find("a").attr("href") || "";
+      const date = $(el).find(".date, time").first().text().trim();
+      if (title && title.length > 10) {
+        items.push({
+          id: `ceew-${i}`,
+          title: title.slice(0, 300),
+          link: link.startsWith("http") ? link : `https://www.ceew.in${link}`,
+          source: "CEEW",
+          category: "Policy Research",
+          date: date || new Date().toISOString().split("T")[0],
+        });
+      }
+    });
+    scrapedData.ceew = { research: items.slice(0, 15), lastScraped: new Date().toISOString(), status: "success", count: items.length };
+    console.log(`  ✅ CEEW: ${items.length} research papers`);
+  } catch (e) {
+    scrapedData.ceew.status = "error";
+    scrapedData.ceew.error = e.message;
+    scrapedData.ceew.lastScraped = new Date().toISOString();
+    console.log(`  ❌ CEEW scrape failed: ${e.message}`);
+  }
+}
+
+// ── 11. IETA (International Emissions Trading Association) ──────────────────
+export async function scrapeIETA() {
+  console.log("🔍 Scraping IETA News...");
+  try {
+    const html = await safeFetch("https://www.ieta.org/news/");
+    if (!html) throw new Error("No response");
+    const $ = cheerio.load(html);
+    const items = [];
+    $("article, .post, .entry").each((i, el) => {
+      const title = $(el).find("h2, h3, .entry-title").first().text().trim();
+      const link = $(el).find("a").attr("href") || "";
+      const date = $(el).find("time, .date").first().text().trim();
+      if (title && title.length > 10) {
+        items.push({
+          id: `ieta-${i}`,
+          title: title.slice(0, 300),
+          link,
+          source: "IETA",
+          category: "Carbon Market News",
+          date: date || new Date().toISOString().split("T")[0],
+        });
+      }
+    });
+    scrapedData.ieta = { news: items.slice(0, 15), lastScraped: new Date().toISOString(), status: "success", count: items.length };
+    console.log(`  ✅ IETA: ${items.length} news items`);
+  } catch (e) {
+    scrapedData.ieta.status = "error";
+    scrapedData.ieta.error = e.message;
+    scrapedData.ieta.lastScraped = new Date().toISOString();
+    console.log(`  ❌ IETA scrape failed: ${e.message}`);
+  }
+}
+
+// ── 12. EEX (European Energy Exchange) Market Data ──────────────────────────
+export async function scrapeEEX() {
+  console.log("🔍 Scraping EEX Carbon Prices...");
+  try {
+    const html = await safeFetch("https://www.eex.com/en/market-data/environmental-markets/spot-market");
+    if (!html) throw new Error("No response");
+    const $ = cheerio.load(html);
+    const items = [];
+    $("table tr").each((i, el) => {
+      const product = $(el).find("td:nth-child(1)").text().trim();
+      const price = $(el).find("td:nth-child(2)").text().trim();
+      if (product && price && (product.includes("EUA") || product.includes("EUAA"))) {
+        items.push({
+          id: `eex-${i}`,
+          product: product.slice(0, 100),
+          price: price,
+          source: "EEX",
+          category: "Carbon Price",
+          date: new Date().toISOString().split("T")[0],
+        });
+      }
+    });
+    scrapedData.eex = { prices: items.slice(0, 10), lastScraped: new Date().toISOString(), status: "success", count: items.length };
+    console.log(`  ✅ EEX: ${items.length} price points`);
+  } catch (e) {
+    scrapedData.eex.status = "error";
+    scrapedData.eex.error = e.message;
+    scrapedData.eex.lastScraped = new Date().toISOString();
+    console.log(`  ❌ EEX scrape failed: ${e.message}`);
+  }
+}
+
 // ── Master scrape function ──────────────────────────────────────────────────
 export async function runAllScrapers() {
   console.log("\n═══════════════════════════════════════════════════════════");
@@ -355,6 +456,9 @@ export async function runAllScrapers() {
     scrapeWorldBank,
     scrapeEUCBAM,
     scrapeICAP,
+    scrapeCEEW,
+    scrapeIETA,
+    scrapeEEX,
   ];
 
   // Run scrapers sequentially to be respectful to servers

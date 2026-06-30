@@ -7,6 +7,7 @@ import express from "express";
 import cors from "cors";
 import cron from "node-cron";
 import { runAllScrapers, scrapedData } from "./scraper.js";
+import { companies, carbonPrices, sectorEmissions, regulatoryTimeline, projectPipeline, cbamExposure } from "./data.js";
 
 const app = express();
 const PORT = process.env.BACKEND_PORT || 8080;
@@ -37,12 +38,6 @@ const regulatoryUpdates = [
   { id: "upd-003", title: "EU CBAM transition period reporting deadline update", body: "European Commission extends Q2 2026 transitional CBAM report submission deadline by 30 days for Indian exporters in cement and steel sectors.", source: "EU Commission Implementing Regulation 2026/814", date: "2026-06-23", sector: "Cement, Iron & Steel", urgency: "Medium", tags: ["CBAM", "EU", "Export", "Cement", "Steel"] },
   { id: "upd-004", title: "Article 6.4 mechanism supervisory body approves new methodology", body: "UN Article 6.4 Supervisory Body approved new VM0042-equivalent methodology for renewable energy projects enabling ITMOs issuance for Indian developers.", source: "UNFCCC SB-A6.4 Decision 2026/12", date: "2026-06-18", sector: "Renewable Energy", urgency: "Medium", tags: ["Article 6", "UNFCCC", "ITMOs", "Renewable Energy"] },
   { id: "upd-005", title: "SEBI proposes framework for Green Credit instruments", body: "Securities and Exchange Board of India releases consultation paper proposing listing and trading of Green Credits on recognised stock exchanges.", source: "SEBI Circular CD/DOP1/2026/45", date: "2026-06-12", sector: "Financial Services", urgency: "Low", tags: ["SEBI", "Green Credits", "Carbon Market"] },
-];
-
-const carbonProjects = [
-  { id: "proj-001", name: "Rajasthan Solar + Storage Project", type: "Renewable Energy", registry: "Gold Standard", status: "Verified", vintage: "2024-2025", creditsIssued: 45200, creditsPending: 12000, additionality: "Strong", permanenceRisk: "Low", leakageRisk: "Negligible", doubleCounting: "No Flag", buyerReadiness: 87, lastAudit: "2026-03-15" },
-  { id: "proj-002", name: "Gujarat Industrial Energy Efficiency Program", type: "Energy Efficiency", registry: "VCS (Verra)", status: "Under Verification", vintage: "2023-2024", creditsIssued: 0, creditsPending: 28400, additionality: "Moderate", permanenceRisk: "Low", leakageRisk: "Low", doubleCounting: "Review Required", buyerReadiness: 54, lastAudit: "2026-01-20" },
-  { id: "proj-003", name: "Madhya Pradesh Avoided Deforestation (REDD+)", type: "Forestry & Land Use", registry: "VCS (Verra)", status: "Active", vintage: "2022-2025", creditsIssued: 89700, creditsPending: 5000, additionality: "Strong", permanenceRisk: "Medium", leakageRisk: "Medium", doubleCounting: "Monitoring", buyerReadiness: 71, lastAudit: "2025-11-30" },
 ];
 
 // ── AI Intelligence ─────────────────────────────────────────────────────────
@@ -96,7 +91,7 @@ app.get("/api/intelligence/updates/:id", (req, res) => {
 // ── Carbon Projects ─────────────────────────────────────────────────────────
 app.get("/api/projects", (req, res) => {
   const { type, status, registry } = req.query;
-  let projects = carbonProjects;
+  let projects = projectPipeline;
   if (type) projects = projects.filter((p) => p.type.toLowerCase().includes(type.toLowerCase()));
   if (status) projects = projects.filter((p) => p.status.toLowerCase() === status.toLowerCase());
   if (registry) projects = projects.filter((p) => p.registry.toLowerCase().includes(registry.toLowerCase()));
@@ -104,9 +99,35 @@ app.get("/api/projects", (req, res) => {
 });
 
 app.get("/api/projects/:id", (req, res) => {
-  const project = carbonProjects.find((p) => p.id === req.params.id);
+  const project = projectPipeline.find((p) => p.id === req.params.id);
   if (!project) return res.status(404).json({ error: "Project not found" });
   res.json(project);
+});
+
+// ── Massive Data API Endpoints ─────────────────────────────────────────────
+app.get("/api/companies", (req, res) => {
+  const { sector, cctsCovered, cbamExposed } = req.query;
+  let list = companies;
+  if (sector) list = list.filter((c) => c.sector.toLowerCase() === sector.toLowerCase());
+  if (cctsCovered !== undefined) list = list.filter((c) => c.cctsCovered === (cctsCovered === "true"));
+  if (cbamExposed !== undefined) list = list.filter((c) => c.cbamExposed === (cbamExposed === "true"));
+  res.json({ companies: list, total: list.length });
+});
+
+app.get("/api/carbon-prices", (req, res) => {
+  res.json(carbonPrices);
+});
+
+app.get("/api/sector-emissions", (req, res) => {
+  res.json(sectorEmissions);
+});
+
+app.get("/api/timeline", (req, res) => {
+  res.json(regulatoryTimeline);
+});
+
+app.get("/api/cbam-exposure", (req, res) => {
+  res.json(cbamExposure);
 });
 
 // ── AI Query ────────────────────────────────────────────────────────────────
@@ -287,6 +308,104 @@ app.get("/api/feed", (req, res) => {
   feed.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 
   res.json({ feed: feed.slice(0, parseInt(limit)), total: feed.length });
+});
+
+// ── RAG / AI Chat Engine ──────────────────────────────────────────────────────
+app.post("/api/chat", (req, res) => {
+  const { message } = req.body;
+  if (!message) return res.status(400).json({ error: "Message is required" });
+
+  const queryLower = message.toLowerCase();
+  
+  // RAG Simulation: Search all scraped and internal data
+  let contextItems = [];
+  
+  // Check timeline
+  regulatoryTimeline.forEach(t => {
+    if (queryLower.includes(t.type.toLowerCase()) || queryLower.includes("timeline")) {
+      contextItems.push(`On ${t.date}, ${t.event} occurred. Impact: ${t.impact}.`);
+    }
+  });
+
+  // Check companies
+  companies.forEach(c => {
+    if (queryLower.includes(c.name.toLowerCase()) || (queryLower.includes(c.sector.toLowerCase()) && c.cctsCovered)) {
+      contextItems.push(`${c.name} in the ${c.sector} sector has Scope 1 emissions of ${c.scope1} MT CO₂e and GEI performance of ${c.geiPerformance} ${c.geiUnit}. Exposure Risk: ${c.riskLevel}.`);
+    }
+  });
+
+  // Check scraped news (latest 50 items)
+  const allScrapedItems = [
+    ...(scrapedData.carbonCredits.articles || []),
+    ...(scrapedData.ieta.news || []),
+    ...(scrapedData.unfccc.news || []),
+    ...(scrapedData.ceew.research || []),
+    ...(scrapedData.bee.notifications || []),
+  ];
+  
+  const relevantNews = allScrapedItems.filter(item => {
+    const text = (item.title || item.name || "").toLowerCase();
+    const keywords = queryLower.split(" ").filter(w => w.length > 4);
+    return keywords.some(word => text.includes(word));
+  }).slice(0, 3);
+
+  let answer = "";
+  if (relevantNews.length > 0 || contextItems.length > 0) {
+    answer = `Based on our real-time CarbonCounsel Intelligence Graph, here is what we found regarding your query:\n\n`;
+    if (contextItems.length > 0) {
+      answer += `**Internal Data Context:**\n- ` + contextItems.slice(0, 3).join("\n- ") + `\n\n`;
+    }
+    if (relevantNews.length > 0) {
+      answer += `**Live Market Feeds:**\n`;
+      relevantNews.forEach(n => {
+        answer += `- [${n.source}] ${n.title} (${n.date})\n`;
+      });
+    }
+    answer += `\n*Would you like a detailed risk assessment report generated for this?*`;
+  } else {
+    answer = `I scanned our 12 live data sources and proprietary databases but couldn't find direct matches for "${message}". Could you specify a sector (e.g., Cement, Steel), a mechanism (e.g., CCTS, CBAM, Article 6), or a specific company name?`;
+  }
+
+  res.json({
+    id: `chat-${Date.now()}`,
+    role: "assistant",
+    content: answer,
+    sourcesUsed: [...new Set(relevantNews.map(n => n.source))]
+  });
+});
+
+// ── Real-time Alerts Engine ─────────────────────────────────────────────────
+app.get("/api/alerts", (req, res) => {
+  // Simulating an alert engine that flags high-priority scraped data
+  const alerts = [];
+  
+  // Check for CCTS/CBAM mentions in recent scraped news
+  const recentItems = [
+    ...(scrapedData.bee.notifications || []),
+    ...(scrapedData.moefcc.notifications || []),
+    ...(scrapedData.euCbam.updates || []),
+    ...(scrapedData.ceew.research || [])
+  ];
+
+  recentItems.forEach(item => {
+    const text = (item.title || "").toLowerCase();
+    if (text.includes("baseline") || text.includes("target")) {
+      alerts.push({ id: `alert-${Date.now()}-${Math.random()}`, type: "Compliance Alert", message: `New regulatory update affecting targets: ${item.title}`, severity: "High", source: item.source, date: item.date });
+    }
+    if (text.includes("cbam") || text.includes("border") || text.includes("export")) {
+      alerts.push({ id: `alert-${Date.now()}-${Math.random()}`, type: "Trade Risk", message: `EU CBAM related update: ${item.title}`, severity: "Medium", source: item.source, date: item.date });
+    }
+  });
+
+  // Mock a few standard alerts if none found
+  if (alerts.length === 0) {
+    alerts.push(
+      { id: "alt-1", type: "Price Alert", message: "EU ETS allowance price dropped 3.2% in the last 48 hours.", severity: "Medium", source: "EEX Market Data", date: new Date().toISOString() },
+      { id: "alt-2", type: "Compliance Deadline", message: "Reminder: 30 days remaining for Q2 transitional CBAM report submission.", severity: "High", source: "System", date: new Date().toISOString() }
+    );
+  }
+
+  res.json({ alerts: alerts.slice(0, 10), count: Math.min(alerts.length, 10) });
 });
 
 // ══════════════════════════════════════════════════════════════════════════════
