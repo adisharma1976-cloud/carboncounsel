@@ -7,7 +7,7 @@ echo "🌿 Starting CarbonCounsel Platform..."
 echo ""
 
 # Start Backend API server on port 3001
-echo "📡 Starting API backend on http://localhost:5001"
+echo "📡 Starting API backend on http://localhost:8080"
 cd "$(dirname "$0")/backend"
 node server.js &
 BACKEND_PID=$!
@@ -25,8 +25,8 @@ echo ""
 echo "✅ CarbonCounsel is running!"
 echo ""
 echo "   Frontend: http://localhost:5173"
-echo "   API:      http://localhost:5001"
-echo "   API Docs: http://localhost:5001/api/health"
+echo "   API:      http://localhost:8080"
+echo "   API Docs: http://localhost:8080/api/health"
 echo ""
 echo "   Press Ctrl+C to stop both servers."
 echo ""
