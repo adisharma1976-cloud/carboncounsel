@@ -350,18 +350,30 @@ app.post("/api/chat", (req, res) => {
   }).slice(0, 3);
 
   let answer = "";
+  let evidences = [];
+
   if (relevantNews.length > 0 || contextItems.length > 0) {
-    answer = `Based on our real-time CarbonCounsel Intelligence Graph, here is what we found regarding your query:\n\n`;
-    if (contextItems.length > 0) {
-      answer += `**Internal Data Context:**\n- ` + contextItems.slice(0, 3).join("\n- ") + `\n\n`;
-    }
-    if (relevantNews.length > 0) {
-      answer += `**Live Market Feeds:**\n`;
-      relevantNews.forEach(n => {
-        answer += `- [${n.source}] ${n.title} (${n.date})\n`;
+    answer = `Based on our real-time CarbonCounsel Intelligence Graph, here is what we found regarding your query. Please refer to the evidence below for detailed metrics.`;
+    
+    contextItems.forEach(ctx => {
+      evidences.push({
+        text: ctx,
+        source: "CarbonCounsel Internal Database",
+        date: new Date().toISOString().split("T")[0],
+        confidenceScore: 95,
+        provenance: "Official",
       });
-    }
-    answer += `\n*Would you like a detailed risk assessment report generated for this?*`;
+    });
+
+    relevantNews.forEach(n => {
+      evidences.push({
+        text: n.title,
+        source: n.source,
+        date: n.date || new Date().toISOString().split("T")[0],
+        confidenceScore: 85,
+        provenance: "Inferred",
+      });
+    });
   } else {
     answer = `I scanned our 12 live data sources and proprietary databases but couldn't find direct matches for "${message}". Could you specify a sector (e.g., Cement, Steel), a mechanism (e.g., CCTS, CBAM, Article 6), or a specific company name?`;
   }
@@ -370,6 +382,7 @@ app.post("/api/chat", (req, res) => {
     id: `chat-${Date.now()}`,
     role: "assistant",
     content: answer,
+    evidences,
     sourcesUsed: [...new Set(relevantNews.map(n => n.source))]
   });
 });
