@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "CarbonCounsel"
+version = "1.0.0"
+id = "artifacts/carboncounsel"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24661
+
+[services.development]
+run = "pnpm --filter @workspace/carboncounsel run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/carboncounsel", "run", "build" ]
+publicDir = "artifacts/carboncounsel/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24661"
+BASE_PATH = "/"
