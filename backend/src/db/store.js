@@ -6,6 +6,7 @@ import { SCHEMA_MAP } from './schemas.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const isVercel = process.env.VERCEL === '1' || process.env.VERCEL === 'true' || !!process.env.VERCEL;
+const BUNDLED_COLLECTIONS_DIR = path.join(__dirname, 'collections');
 const COLLECTIONS_DIR = process.env.CARBONCOUNSEL_DATA_DIR
   ? path.resolve(process.env.CARBONCOUNSEL_DATA_DIR)
   : isVercel
@@ -181,7 +182,12 @@ export function initializeStore() {
   for (const collection of ALL_COLLECTIONS) {
     const filePath = collectionPath(collection);
     if (!fs.existsSync(filePath)) {
-      fs.writeFileSync(filePath, '[]', 'utf-8');
+      const bundledPath = path.join(BUNDLED_COLLECTIONS_DIR, `${collection}.json`);
+      if (isVercel && fs.existsSync(bundledPath)) {
+        fs.copyFileSync(bundledPath, filePath);
+      } else {
+        fs.writeFileSync(filePath, '[]', 'utf-8');
+      }
     }
   }
 }
