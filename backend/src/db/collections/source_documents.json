@@ -1,0 +1,414 @@
+[
+  {
+    "source_name": "NSE BRSR",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/TATASTEEL/brsr-2024.pdf",
+    "title": "BRSR Report 2023-24 - TATASTEEL",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-15",
+    "scraped_at": "2026-07-01T21:16:29.568Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "TATASTEEL"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782891610678-efvzrw",
+    "updated_at": "2026-07-01T21:16:29.569Z",
+    "checksum_hash": "05c9b62db2375e5779993574a05522962da922b5812df987a6fbc1abc1e69987",
+    "version": 2,
+    "previous_checksum_hash": null
+  },
+  {
+    "source_name": "NSE BRSR",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/RELIANCE/brsr-2024.pdf",
+    "title": "BRSR Report 2023-24 - RELIANCE",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-20",
+    "scraped_at": "2026-07-01T21:16:29.578Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "RELIANCE"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782891610680-v4vdmd",
+    "updated_at": "2026-07-01T21:16:29.578Z",
+    "checksum_hash": "c71c0655474dd729fb07e5e25cac7b6db874d99d3993c0d78ed03d3e494092a0",
+    "version": 2,
+    "previous_checksum_hash": null
+  },
+  {
+    "source_name": "NSE BRSR",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/ULTRACEMCO/brsr-2024.pdf",
+    "title": "BRSR Report 2023-24 - ULTRACEMCO",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-25",
+    "scraped_at": "2026-07-01T21:16:29.580Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "ULTRACEMCO"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782891610681-2ydkmp",
+    "updated_at": "2026-07-01T21:16:29.580Z",
+    "checksum_hash": "b60b20fcbb9e915afffed0d0a4bc20347c06bec97328be15d19ebf5f52572587",
+    "version": 2,
+    "previous_checksum_hash": null
+  },
+  {
+    "source_name": "NSE Annual Reports",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/NTPC/annual-report-2024.pdf",
+    "title": "Annual Report 2023-24 - NTPC",
+    "document_type": "annual_report",
+    "publication_date": "2024-06-10",
+    "scraped_at": "2026-07-01T21:16:31.083Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "NTPC"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782891612188-q4n5gb",
+    "updated_at": "2026-07-01T21:16:31.083Z",
+    "checksum_hash": "2dcebba95ec951b2da90bef127957a305ab1242a72a28f8c87e3c53344580516",
+    "version": 2,
+    "previous_checksum_hash": null
+  },
+  {
+    "source_name": "NSE Annual Reports",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/SAIL/annual-report-2024.pdf",
+    "title": "Annual Report 2023-24 - SAIL",
+    "document_type": "annual_report",
+    "publication_date": "2024-06-15",
+    "scraped_at": "2026-07-01T21:16:31.086Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "SAIL"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782891612191-nt6y6r",
+    "updated_at": "2026-07-01T21:16:31.086Z",
+    "checksum_hash": "a73b10973bc87737cfe7197f99f704189eed3a7d4382c14a8c8b1640b2bbc0c1",
+    "version": 2,
+    "previous_checksum_hash": null
+  },
+  {
+    "source_name": "BSE Filings",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/TATASTEEL_BRSR.pdf",
+    "title": "Corporate Filing - TATASTEEL",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-16",
+    "scraped_at": "2026-07-01T21:16:32.589Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "TATASTEEL",
+      "500470"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782891613696-nin4pd",
+    "updated_at": "2026-07-01T21:16:32.589Z",
+    "checksum_hash": "87ee4e26af01ca70891f2415c65c51b4347febf2fa71aa4204a5944b3a841ec7",
+    "version": 2,
+    "previous_checksum_hash": null
+  },
+  {
+    "source_name": "BSE Filings",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/NTPC_BRSR.pdf",
+    "title": "Corporate Filing - NTPC",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-06-11",
+    "scraped_at": "2026-07-01T21:16:32.594Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "NTPC",
+      "532555"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782891613698-kyihtc",
+    "updated_at": "2026-07-01T21:16:32.594Z",
+    "checksum_hash": "7f56fcd727a04fa63f53a27e4752f1cd5247f28afd0031e6c80a2cfd219f0d58",
+    "version": 2,
+    "previous_checksum_hash": null
+  },
+  {
+    "source_name": "NSE BRSR",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/TATASTEEL/brsr-2024.pdf",
+    "title": "BRSR Report 2023-24 - TATASTEEL",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-15",
+    "scraped_at": "2026-07-01T18:30:37.022Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "TATASTEEL"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782930637022-7o8kul"
+  },
+  {
+    "source_name": "NSE BRSR",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/RELIANCE/brsr-2024.pdf",
+    "title": "BRSR Report 2023-24 - RELIANCE",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-20",
+    "scraped_at": "2026-07-01T18:30:37.028Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "RELIANCE"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782930637028-k307am"
+  },
+  {
+    "source_name": "NSE BRSR",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/ULTRACEMCO/brsr-2024.pdf",
+    "title": "BRSR Report 2023-24 - ULTRACEMCO",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-25",
+    "scraped_at": "2026-07-01T18:30:37.029Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "ULTRACEMCO"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782930637029-035jcr"
+  },
+  {
+    "source_name": "NSE Annual Reports",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/NTPC/annual-report-2024.pdf",
+    "title": "Annual Report 2023-24 - NTPC",
+    "document_type": "annual_report",
+    "publication_date": "2024-06-10",
+    "scraped_at": "2026-07-01T18:30:38.532Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "NTPC"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782930638532-d3fhgu"
+  },
+  {
+    "source_name": "NSE Annual Reports",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/SAIL/annual-report-2024.pdf",
+    "title": "Annual Report 2023-24 - SAIL",
+    "document_type": "annual_report",
+    "publication_date": "2024-06-15",
+    "scraped_at": "2026-07-01T18:30:38.534Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "SAIL"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782930638534-z0ofwc"
+  },
+  {
+    "source_name": "BSE Filings",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/TATASTEEL_BRSR.pdf",
+    "title": "Corporate Filing - TATASTEEL",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-16",
+    "scraped_at": "2026-07-01T18:30:40.038Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "TATASTEEL",
+      "500470"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782930640038-hrfbu5"
+  },
+  {
+    "source_name": "BSE Filings",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/NTPC_BRSR.pdf",
+    "title": "Corporate Filing - NTPC",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-06-11",
+    "scraped_at": "2026-07-01T18:30:40.040Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "NTPC",
+      "532555"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782930640040-gk8qc1"
+  },
+  {
+    "source_name": "NSE BRSR",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/TATASTEEL/brsr-2024.pdf",
+    "title": "BRSR Report 2023-24 - TATASTEEL",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-15",
+    "scraped_at": "2026-07-01T19:33:49.838Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "TATASTEEL"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782934429838-0spssv"
+  },
+  {
+    "source_name": "NSE BRSR",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/RELIANCE/brsr-2024.pdf",
+    "title": "BRSR Report 2023-24 - RELIANCE",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-20",
+    "scraped_at": "2026-07-01T19:33:49.842Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "RELIANCE"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782934429842-7d9ge9"
+  },
+  {
+    "source_name": "NSE BRSR",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/ULTRACEMCO/brsr-2024.pdf",
+    "title": "BRSR Report 2023-24 - ULTRACEMCO",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-25",
+    "scraped_at": "2026-07-01T19:33:49.843Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "ULTRACEMCO"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782934429843-ha23je"
+  },
+  {
+    "source_name": "NSE Annual Reports",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/NTPC/annual-report-2024.pdf",
+    "title": "Annual Report 2023-24 - NTPC",
+    "document_type": "annual_report",
+    "publication_date": "2024-06-10",
+    "scraped_at": "2026-07-01T19:33:51.346Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "NTPC"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782934431346-idxrj6"
+  },
+  {
+    "source_name": "NSE Annual Reports",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.nseindia.com/companies/SAIL/annual-report-2024.pdf",
+    "title": "Annual Report 2023-24 - SAIL",
+    "document_type": "annual_report",
+    "publication_date": "2024-06-15",
+    "scraped_at": "2026-07-01T19:33:51.350Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "SAIL"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782934431350-fe1ls2"
+  },
+  {
+    "source_name": "BSE Filings",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/TATASTEEL_BRSR.pdf",
+    "title": "Corporate Filing - TATASTEEL",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-05-16",
+    "scraped_at": "2026-07-01T19:33:52.854Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "TATASTEEL",
+      "500470"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782934432854-x4hehn"
+  },
+  {
+    "source_name": "BSE Filings",
+    "source_type": "Registry",
+    "source_tier": "B",
+    "source_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/NTPC_BRSR.pdf",
+    "title": "Corporate Filing - NTPC",
+    "document_type": "sustainability_report",
+    "publication_date": "2024-06-11",
+    "scraped_at": "2026-07-01T19:33:52.858Z",
+    "jurisdiction": "India",
+    "company_tags": [
+      "NTPC",
+      "532555"
+    ],
+    "confidence_score": 90,
+    "provenance": "company_disclosed",
+    "data_status": "verified",
+    "id": "source_documents-1782934432858-zb748s"
+  }
+]

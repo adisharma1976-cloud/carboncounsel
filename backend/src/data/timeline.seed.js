@@ -1,0 +1,158 @@
+/**
+ * CarbonCounsel — Regulatory Timeline & Alerts Seed Data
+ */
+export const regulatoryTimeline = [
+  {
+    id: "reg-001",
+    title: "CCTS Draft Notification Published",
+    source_name: "BEE India",
+    source_url: "https://beeindia.gov.in/sites/default/files/CCTS_Draft.pdf",
+    publication_date: "2023-05-18",
+    effective_date: "2023-05-18",
+    jurisdiction: "India",
+    affected_sectors: ["All"],
+    regulation_type: "Draft Policy",
+    summary: "BEE published the first draft of the Carbon Credit Trading Scheme for public consultation.",
+    impact_level: "high",
+    action_required: "Submit comments by June 15, 2023.",
+    confidence_score: 100
+  },
+  {
+    id: "reg-002",
+    title: "CCTS Final Notification (MoEFCC)",
+    source_name: "e-Gazette of India",
+    source_url: "https://egazette.gov.in/WriteReadData/2023/246830.pdf",
+    publication_date: "2023-06-28",
+    effective_date: "2023-06-28",
+    jurisdiction: "India",
+    affected_sectors: ["All"],
+    regulation_type: "Gazette Notification",
+    summary: "MoEFCC formally notified the Carbon Credit Trading Scheme (CCTS) 2023 under the Energy Conservation Act, 2001.",
+    impact_level: "critical",
+    action_required: "Obligated entities must prepare for baseline verification.",
+    confidence_score: 100
+  },
+  {
+    id: "reg-003",
+    title: "CBAM Transitional Period Starts",
+    source_name: "EU CBAM Portal",
+    source_url: "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en",
+    publication_date: "2023-08-17",
+    effective_date: "2023-10-01",
+    jurisdiction: "EU",
+    affected_sectors: ["Iron & Steel", "Aluminium", "Cement", "Fertilisers", "Hydrogen", "Electricity"],
+    regulation_type: "Implementation",
+    summary: "The EU CBAM enters its transitional phase. Importers must report embedded emissions quarterly without paying financial adjustments.",
+    impact_level: "critical",
+    action_required: "Indian exporters must calculate and share embedded emissions data with EU buyers.",
+    confidence_score: 100
+  },
+  {
+    id: "reg-004",
+    title: "First CBAM Quarterly Report Due",
+    source_name: "EU CBAM Portal",
+    source_url: "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en",
+    publication_date: "2023-10-01",
+    effective_date: "2024-01-31",
+    jurisdiction: "EU",
+    affected_sectors: ["Iron & Steel", "Aluminium", "Cement", "Fertilisers"],
+    regulation_type: "Compliance Deadline",
+    summary: "Deadline for submitting the first CBAM quarterly report for Q4 2023.",
+    impact_level: "high",
+    action_required: "Submit report on the CBAM Transitional Registry.",
+    confidence_score: 100
+  },
+  {
+    id: "reg-005",
+    title: "CCTS Detailed Procedure Draft Published",
+    source_name: "BEE India",
+    source_url: "https://beeindia.gov.in/sites/default/files/CCTS_Detailed_Procedure_Draft.pdf",
+    publication_date: "2024-02-15",
+    effective_date: "2024-02-15",
+    jurisdiction: "India",
+    affected_sectors: ["All"],
+    regulation_type: "Draft Procedure",
+    summary: "BEE released the detailed procedure for accreditation of carbon verification agencies and the trading mechanism.",
+    impact_level: "medium",
+    action_required: "Review accreditation guidelines for verification agencies.",
+    confidence_score: 95
+  },
+  {
+    id: "reg-006",
+    title: "End of CBAM Default Values Period",
+    source_name: "EU CBAM Portal",
+    source_url: "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en",
+    publication_date: "2024-01-01",
+    effective_date: "2024-07-31",
+    jurisdiction: "EU",
+    affected_sectors: ["Iron & Steel", "Aluminium", "Cement", "Fertilisers"],
+    regulation_type: "Compliance Requirement",
+    summary: "From July 2024 (for Q3 reports), actual emissions data must be reported. Default values can no longer be used for up to 100% of emissions.",
+    impact_level: "critical",
+    action_required: "Transition to actual primary data collection for Scope 1 and Scope 2 emissions.",
+    confidence_score: 100
+  },
+  {
+    id: "reg-007",
+    title: "CCTS Phase I Sector Notification Expected",
+    source_name: "Inferred from MoEFCC Statements",
+    source_url: null,
+    publication_date: "2024-09-01",
+    effective_date: "2024-10-01",
+    jurisdiction: "India",
+    affected_sectors: ["Cement", "Iron & Steel", "Aluminium", "Fertiliser"],
+    regulation_type: "Upcoming Notification",
+    summary: "Expected notification of the final list of obligated entities and their specific GHG emission intensity targets for Phase I.",
+    impact_level: "critical",
+    action_required: "Monitor Gazette for final target notifications.",
+    confidence_score: 60
+  }
+];
+
+export const alerts = [
+  {
+    id: "alt-001",
+    alert_title: "CBAM: Transition to Actual Data Required",
+    source_name: "EU CBAM Portal",
+    source_url: "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en",
+    alert_type: "regulatory_deadline",
+    affected_sectors: ["Iron & Steel", "Aluminium", "Cement"],
+    impact_level: "critical",
+    urgency: "high",
+    summary: "Starting Q3 2024, EU CBAM reports must use actual emissions data instead of default values. Exporters failing to provide actual data to EU importers may face order cancellations or penalties.",
+    action_required: "Ensure MRV systems are in place to calculate actual embedded emissions per tonne of product.",
+    deadline: "2024-07-01",
+    read_status: false,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: "alt-002",
+    alert_title: "CCTS Phase I Verification Baseline",
+    source_name: "BEE India",
+    source_url: "https://beeindia.gov.in/",
+    alert_type: "compliance_prep",
+    affected_sectors: ["Cement", "Iron & Steel", "Aluminium", "Fertiliser", "Petroleum Refinery"],
+    impact_level: "high",
+    urgency: "medium",
+    summary: "BEE is finalizing the baseline verification process for Phase I obligated entities. Historical data from FY22, FY23, and FY24 will likely form the baseline.",
+    action_required: "Audit and prepare GHG inventory data for the last 3 financial years.",
+    deadline: "2024-10-31",
+    read_status: false,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: "alt-003",
+    alert_title: "Surge in IEX ESCert Prices",
+    source_name: "IEX India",
+    source_url: "https://www.iexindia.com/",
+    alert_type: "market_movement",
+    affected_sectors: ["Power", "Textiles", "Paper & Pulp", "Chemicals"],
+    impact_level: "medium",
+    urgency: "low",
+    summary: "ESCert prices on IEX have surged past ₹1,000 as PAT Cycle VI compliance deadline approaches, showing market tightness.",
+    action_required: "Review PAT compliance status and consider early procurement if facing a shortfall.",
+    deadline: null,
+    read_status: true,
+    created_at: new Date(Date.now() - 86400000 * 5).toISOString()
+  }
+];

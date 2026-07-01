@@ -1,0 +1,62 @@
+[
+  {
+    "id": "alt-001",
+    "alert_title": "CBAM: Transition to Actual Data Required",
+    "source_name": "EU CBAM Portal",
+    "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en",
+    "alert_type": "regulatory_deadline",
+    "affected_sectors": [
+      "Iron & Steel",
+      "Aluminium",
+      "Cement"
+    ],
+    "impact_level": "critical",
+    "urgency": "high",
+    "summary": "Starting Q3 2024, EU CBAM reports must use actual emissions data instead of default values. Exporters failing to provide actual data to EU importers may face order cancellations or penalties.",
+    "action_required": "Ensure MRV systems are in place to calculate actual embedded emissions per tonne of product.",
+    "deadline": "2024-07-01",
+    "read_status": false,
+    "created_at": "2026-07-01T19:33:16.581Z"
+  },
+  {
+    "id": "alt-002",
+    "alert_title": "CCTS Phase I Verification Baseline",
+    "source_name": "BEE India",
+    "source_url": "https://beeindia.gov.in/",
+    "alert_type": "compliance_prep",
+    "affected_sectors": [
+      "Cement",
+      "Iron & Steel",
+      "Aluminium",
+      "Fertiliser",
+      "Petroleum Refinery"
+    ],
+    "impact_level": "high",
+    "urgency": "medium",
+    "summary": "BEE is finalizing the baseline verification process for Phase I obligated entities. Historical data from FY22, FY23, and FY24 will likely form the baseline.",
+    "action_required": "Audit and prepare GHG inventory data for the last 3 financial years.",
+    "deadline": "2024-10-31",
+    "read_status": false,
+    "created_at": "2026-07-01T19:33:16.583Z"
+  },
+  {
+    "id": "alt-003",
+    "alert_title": "Surge in IEX ESCert Prices",
+    "source_name": "IEX India",
+    "source_url": "https://www.iexindia.com/",
+    "alert_type": "market_movement",
+    "affected_sectors": [
+      "Power",
+      "Textiles",
+      "Paper & Pulp",
+      "Chemicals"
+    ],
+    "impact_level": "medium",
+    "urgency": "low",
+    "summary": "ESCert prices on IEX have surged past ₹1,000 as PAT Cycle VI compliance deadline approaches, showing market tightness.",
+    "action_required": "Review PAT compliance status and consider early procurement if facing a shortfall.",
+    "deadline": null,
+    "read_status": true,
+    "created_at": "2026-06-26T19:33:16.583Z"
+  }
+]

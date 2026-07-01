@@ -1,0 +1,69 @@
+[
+  {
+    "product": "Iron & Steel Products",
+    "sector": "Iron & Steel",
+    "india_eu_exports_usd_mn": 4200,
+    "india_eu_exports_mt": 5.8,
+    "embedded_carbon_tco2_per_t": 2.1,
+    "estimated_cbam_liability_usd_mn": 850,
+    "top_exporters": [
+      "Tata Steel",
+      "JSW Steel",
+      "SAIL",
+      "Jindal Steel and Power",
+      "AM/NS India"
+    ],
+    "id": "cbam_exposure-1782934396901-dhwzko"
+  },
+  {
+    "product": "Aluminium Products",
+    "sector": "Aluminium",
+    "india_eu_exports_usd_mn": 1800,
+    "india_eu_exports_mt": 0.9,
+    "embedded_carbon_tco2_per_t": 8.5,
+    "estimated_cbam_liability_usd_mn": 520,
+    "top_exporters": [
+      "Hindalco",
+      "Vedanta",
+      "NALCO"
+    ],
+    "id": "cbam_exposure-1782934396904-ti862d"
+  },
+  {
+    "product": "Cement / Clinker",
+    "sector": "Cement",
+    "india_eu_exports_usd_mn": 120,
+    "india_eu_exports_mt": 0.35,
+    "embedded_carbon_tco2_per_t": 0.65,
+    "estimated_cbam_liability_usd_mn": 15,
+    "top_exporters": [
+      "UltraTech Cement",
+      "ACC",
+      "Ambuja Cements"
+    ],
+    "id": "cbam_exposure-1782934396907-pg30if"
+  },
+  {
+    "product": "Fertilisers",
+    "sector": "Fertiliser",
+    "india_eu_exports_usd_mn": 280,
+    "india_eu_exports_mt": 0.42,
+    "embedded_carbon_tco2_per_t": 1.8,
+    "estimated_cbam_liability_usd_mn": 52,
+    "top_exporters": [
+      "Coromandel International",
+      "Deepak Fertilisers"
+    ],
+    "id": "cbam_exposure-1782934396908-zp8re9"
+  },
+  {
+    "product": "Hydrogen",
+    "sector": "Hydrogen",
+    "india_eu_exports_usd_mn": 5,
+    "india_eu_exports_mt": null,
+    "embedded_carbon_tco2_per_t": null,
+    "estimated_cbam_liability_usd_mn": null,
+    "top_exporters": [],
+    "id": "cbam_exposure-1782934396908-9freuh"
+  }
+]

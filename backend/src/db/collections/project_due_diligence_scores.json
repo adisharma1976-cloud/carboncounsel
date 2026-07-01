@@ -1,0 +1,36 @@
+[
+  {
+    "project_id": "proj-001",
+    "additionality_score": 65,
+    "permanence_score": 95,
+    "leakage_risk_score": 90,
+    "double_counting_risk_score": 85,
+    "verification_quality_score": 90,
+    "overall_rating": "B+",
+    "red_flags": [
+      "Common practice - solar is highly viable without carbon revenue in Rajasthan"
+    ],
+    "recommended_questions": [
+      "Has this project claimed RECs concurrently?"
+    ],
+    "id": "project_due_diligence_scores-1782934397213-babjkm"
+  },
+  {
+    "project_id": "proj-002",
+    "additionality_score": 90,
+    "permanence_score": 60,
+    "leakage_risk_score": 55,
+    "double_counting_risk_score": 80,
+    "verification_quality_score": 75,
+    "overall_rating": "B-",
+    "red_flags": [
+      "High reversal risk due to forest fires in the region",
+      "Baseline calculation assumes aggressive deforestation without evidence"
+    ],
+    "recommended_questions": [
+      "What is the buffer pool contribution?",
+      "How are community land rights handled?"
+    ],
+    "id": "project_due_diligence_scores-1782934397214-gd3thm"
+  }
+]

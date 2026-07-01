@@ -1,0 +1,68 @@
+[
+  {
+    "id": "cbam-001",
+    "product_name": "Iron and Steel",
+    "cn_code": "72, 73",
+    "hs_code": "72, 73",
+    "cbam_sector": "Iron and Steel",
+    "covered_status": true,
+    "direct_emissions_required": true,
+    "indirect_emissions_required": false,
+    "default_values_available": true
+  },
+  {
+    "id": "cbam-002",
+    "product_name": "Aluminium",
+    "cn_code": "76",
+    "hs_code": "76",
+    "cbam_sector": "Aluminium",
+    "covered_status": true,
+    "direct_emissions_required": true,
+    "indirect_emissions_required": true,
+    "default_values_available": true
+  },
+  {
+    "id": "cbam-003",
+    "product_name": "Cement",
+    "cn_code": "2523",
+    "hs_code": "2523",
+    "cbam_sector": "Cement",
+    "covered_status": true,
+    "direct_emissions_required": true,
+    "indirect_emissions_required": false,
+    "default_values_available": true
+  },
+  {
+    "id": "cbam-004",
+    "product_name": "Fertilisers",
+    "cn_code": "2808, 2814, 2834, 3102, 3105",
+    "hs_code": "2808, 2814, 2834, 3102, 3105",
+    "cbam_sector": "Fertilisers",
+    "covered_status": true,
+    "direct_emissions_required": true,
+    "indirect_emissions_required": false,
+    "default_values_available": true
+  },
+  {
+    "id": "cbam-005",
+    "product_name": "Hydrogen",
+    "cn_code": "2804 10 00",
+    "hs_code": "2804",
+    "cbam_sector": "Hydrogen",
+    "covered_status": true,
+    "direct_emissions_required": true,
+    "indirect_emissions_required": true,
+    "default_values_available": true
+  },
+  {
+    "id": "cbam-006",
+    "product_name": "Electricity",
+    "cn_code": "2716 00 00",
+    "hs_code": "2716",
+    "cbam_sector": "Electricity",
+    "covered_status": true,
+    "direct_emissions_required": true,
+    "indirect_emissions_required": false,
+    "default_values_available": true
+  }
+]

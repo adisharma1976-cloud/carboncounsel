@@ -1,0 +1,110 @@
+/**
+ * CarbonCounsel — Carbon Projects & Registry Seed Data
+ */
+export const carbonProjects = [
+  {
+    id: "proj-001",
+    registry: "Gold Standard",
+    registry_project_id: "GS10245",
+    project_name: "100 MW Solar Power Project in Rajasthan",
+    developer: "Green Energy Solutions Ltd.",
+    country: "India",
+    state_region: "Rajasthan",
+    project_type: "Renewable Energy",
+    methodology: "ACM0002",
+    status: "Registered",
+    crediting_period_start: "2020-01-01",
+    crediting_period_end: "2030-12-31",
+    issued_credits: 450000,
+    retired_credits: 320000,
+    available_credits: 130000,
+    vintage_years: ["2020", "2021", "2022"],
+    article6_relevance: true,
+    data_confidence: 95
+  },
+  {
+    id: "proj-002",
+    registry: "Verra VCS",
+    registry_project_id: "VCS2154",
+    project_name: "Community Based Afforestation in Odisha",
+    developer: "EcoGrow India",
+    country: "India",
+    state_region: "Odisha",
+    project_type: "Forestry & Land Use",
+    methodology: "AR-ACM0003",
+    status: "Under Validation",
+    crediting_period_start: "2023-06-01",
+    crediting_period_end: "2043-05-31",
+    issued_credits: 0,
+    retired_credits: 0,
+    available_credits: 0,
+    vintage_years: [],
+    article6_relevance: true,
+    data_confidence: 80
+  },
+  {
+    id: "proj-003",
+    registry: "CDM",
+    registry_project_id: "CDM9821",
+    project_name: "Waste Heat Recovery at Cement Plant",
+    developer: "UltraTech Cement",
+    country: "India",
+    state_region: "Madhya Pradesh",
+    project_type: "Energy Efficiency",
+    methodology: "AM0024",
+    status: "Registered",
+    crediting_period_start: "2015-04-01",
+    crediting_period_end: "2025-03-31",
+    issued_credits: 1250000,
+    retired_credits: 1200000,
+    available_credits: 50000,
+    vintage_years: ["2015", "2016", "2017", "2018", "2019", "2020", "2021"],
+    article6_relevance: false,
+    data_confidence: 98
+  },
+  {
+    id: "proj-004",
+    registry: "Global Carbon Council",
+    registry_project_id: "GCC342",
+    project_name: "Biomass Co-firing in Thermal Power Plant",
+    developer: "NTPC Ltd",
+    country: "India",
+    state_region: "Uttar Pradesh",
+    project_type: "Energy Demand",
+    methodology: "GCCM001",
+    status: "Registered",
+    crediting_period_start: "2022-01-01",
+    crediting_period_end: "2032-12-31",
+    issued_credits: 210000,
+    retired_credits: 45000,
+    available_credits: 165000,
+    vintage_years: ["2022"],
+    article6_relevance: true,
+    data_confidence: 92
+  }
+];
+
+export const projectDueDiligence = [
+  {
+    project_id: "proj-001",
+    additionality_score: 65,
+    permanence_score: 95,
+    leakage_risk_score: 90,
+    double_counting_risk_score: 85,
+    verification_quality_score: 90,
+    overall_rating: "B+",
+    red_flags: ["Common practice - solar is highly viable without carbon revenue in Rajasthan"],
+    recommended_questions: ["Has this project claimed RECs concurrently?"]
+  },
+  {
+    project_id: "proj-002",
+    additionality_score: 90,
+    permanence_score: 60,
+    leakage_risk_score: 55,
+    double_counting_risk_score: 80,
+    verification_quality_score: 75,
+    overall_rating: "B-",
+    red_flags: ["High reversal risk due to forest fires in the region", "Baseline calculation assumes aggressive deforestation without evidence"],
+    recommended_questions: ["What is the buffer pool contribution?", "How are community land rights handled?"]
+  }
+];
